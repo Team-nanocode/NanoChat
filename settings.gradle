@@ -1,0 +1,2 @@
+rootProject.name = "NanoChat"
+include ':app'
