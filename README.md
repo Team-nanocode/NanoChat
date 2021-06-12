@@ -1,2 +1,0 @@
-# NanoChat
-Chat application 

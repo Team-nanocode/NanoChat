@@ -1,4 +1,4 @@
-package com.eng.pdn;
+package com.example.nanochat;
 
 import androidx.appcompat.app.AppCompatActivity;
 

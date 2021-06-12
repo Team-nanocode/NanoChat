@@ -1,4 +1,4 @@
-package com.eng.pdn;
+package com.example.nanochat;
 
 import org.junit.Test;
 
