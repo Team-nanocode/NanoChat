@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChatList">
+    tools:context=".ChatActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/chatListReview"
         android:layout_width="409dp"
-        android:layout_height="650dp"
-        android:layout_marginTop="84dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="729dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp"
+        android:id="@+id/chats"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
