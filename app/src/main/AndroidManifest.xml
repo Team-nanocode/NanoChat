@@ -10,8 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ChatActivity"></activity>
-        <activity android:name=".ChatList" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SetProfileActivity" />
+        <activity android:name=".OtpAuthenticationActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
