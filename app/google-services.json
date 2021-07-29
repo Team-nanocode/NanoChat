@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "388275713080",
+    "project_id": "nanochat-34ee8",
+    "storage_bucket": "nanochat-34ee8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:388275713080:android:0121e91748a6a45bcc62cd",
+        "android_client_info": {
+          "package_name": "com.example.nanochat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "388275713080-jrh1fa5sacop5tnq2he2bdgoappfhgrn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nanochat",
+            "certificate_hash": "5c2e3cfa5707edbf572e7b59ef824e24028f7a7f"
+          }
+        },
+        {
+          "client_id": "388275713080-ole47l6s34bih112m1mri9eleo9lmm57.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5ejfVCBSKarQrQh9RCYA9hDotHGwA1zk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "388275713080-ole47l6s34bih112m1mri9eleo9lmm57.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
