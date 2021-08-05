@@ -1,4 +1,4 @@
-package com.example.nanochat;
+package com.pdn.eng.cipher.nanochat;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;

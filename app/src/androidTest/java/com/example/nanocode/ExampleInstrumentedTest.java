@@ -1,4 +1,4 @@
-package com.example.nanochat;
+package com.example.nanocode;
 
 import android.content.Context;
 
