@@ -10,13 +10,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="Save Your Profile"
         android:layout_above="@+id/getuserimage"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
+        android:text="Save Your Profile"
+        android:fontFamily="@font/raleway"
         android:textColor="#25d366"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true">
+        android:textSize="30sp"
+        android:textStyle="bold">
 
     </TextView>
 
@@ -36,7 +37,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_launcher_background"
+            android:src="@drawable/logo"
             android:id="@+id/getuserimageinimageview"
             android:scaleType="centerCrop">
 
