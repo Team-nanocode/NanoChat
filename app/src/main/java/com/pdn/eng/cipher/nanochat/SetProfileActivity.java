@@ -183,11 +183,11 @@ public class SetProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == PICK_IMAGE && resultCode == RESULT_OK){
             imagePath = data.getData();
             mGetUserImageInImageView.setImageURI(imagePath);
         }
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }

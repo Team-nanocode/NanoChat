@@ -1,5 +1,6 @@
 package com.pdn.eng.cipher.nanochat;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,7 +18,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.squareup.picasso.Picasso;
@@ -41,7 +44,8 @@ public class ChatFragment extends Fragment {
         firebaseFirestore = FirebaseFirestore.getInstance();
         mRecyclerView = v.findViewById(R.id.recyclerview);
 
-        Query query = firebaseFirestore.collection("Users");
+        //Query query = firebaseFirestore.collection("Users");
+        Query query = firebaseFirestore.collection("Users").whereNotEqualTo("uid",firebaseAuth.getUid());
 
         FirestoreRecyclerOptions<FirebaseModel> allUserNames = new FirestoreRecyclerOptions.Builder<FirebaseModel>().setQuery(query,FirebaseModel.class).build();
 
@@ -63,7 +67,11 @@ public class ChatFragment extends Fragment {
                 noteViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(getActivity(), "Item Is Clicked", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(),SpecificChat.class);
+                        intent.putExtra("name",firebaseModel.getName());
+                        intent.putExtra("receiveruid",firebaseModel.getUid());
+                        intent.putExtra("imageuri",firebaseModel.getImage());
+                        startActivity(intent);
                     }
                 });
             }
@@ -100,6 +108,13 @@ public class ChatFragment extends Fragment {
     public void onStart() {
         super.onStart();
         chatAdapter.startListening();
+        DocumentReference documentReference = firebaseFirestore.collection("Users").document(firebaseAuth.getUid());
+        documentReference.update("status","Online").addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(getActivity(), "Now User is Offline", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -108,5 +123,13 @@ public class ChatFragment extends Fragment {
         if(chatAdapter != null){
             chatAdapter.stopListening();
         }
+        DocumentReference documentReference = firebaseFirestore.collection("Users").document(firebaseAuth.getUid());
+        documentReference.update("status","Offline").addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(getActivity(), "Now User is Offline", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
 }
